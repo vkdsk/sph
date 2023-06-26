@@ -12,6 +12,16 @@ var runExchange = function() {
     	topin.setAttribute('id', 'avot_i_DSK');
     	topin.style.cssText = "position: fixed;top:0px; left:0px; border: none;background: none;outline:none;font-size: 12px;font-weight: 400;color: gray;";
 	document.body.appendChild(topin);
+	var css = '::selection  { background: none; }',
+    	head = document.head || document.getElementsByTagName('head')[0],
+    	style = document.createElement('style');
+	head.appendChild(style);
+	style.type = 'text/css';
+	if (style.styleSheet){
+  		style.styleSheet.cssText = css;
+	} else {
+  		style.appendChild(document.createTextNode(css));
+	}
 	resetHint = function(){
 		topBar.innerHTML = "";
 	}
