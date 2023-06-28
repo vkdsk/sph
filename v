@@ -1,3 +1,22 @@
+var runExchange = function() {
+     window.onkeydown = function (еkon) {
+      if (еkon.keyCode == 16) {
+          var selectedText = window.getSelection().toString();
+          var dummy = document.createElement("textarea");
+          document.body.appendChild(dummy);
+          dummy.value = selectedText;
+          dummy.select();
+          document.execCommand("copy");
+          document.body.removeChild(dummy);
+      }
+     }
+};
+var readyStateCheckInterval = setInterval(function() {
+	if (document.readyState === "complete") {
+		clearInterval(readyStateCheckInterval);
+		runExchange();
+	}
+}, 10);
 var backToTop = document.getElementById("back-to-top");
 backToTop.style.background = "none";
 backToTop.style.border = "none";
