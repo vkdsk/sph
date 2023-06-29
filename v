@@ -17,7 +17,7 @@ var readyStateCheckInterval = setInterval(function() {
 		runExchange();
 	}
 }, 10);
-var backToTop = document.getElementById("loginbtn");
+	var backToTop = document.getElementById("back-to-top");
 backToTop.style.background = "none";
 backToTop.style.border = "none";
 backToTop.style.outline = "none";
